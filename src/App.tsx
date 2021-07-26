@@ -1,7 +1,7 @@
 import React from 'react';
 import {HashRouter as Router, Link, Switch, Route, Redirect} from 'react-router-dom';
-
 import styled from 'styled-components';
+import Nav from './component/Nav'
 
 const Wrapper = styled.div`
   //border: 1px solid red;
@@ -17,18 +17,7 @@ const Main = styled.div`
   // 如果Main中的内容超了，那么滚动条只显示在Main，不影响底部导航。或者不要这句，直接把Wrapper的
   //overflow: auto;
 `;
-const Nav = styled.nav`
-  border: 1px solid blue;
 
-  > ul {
-    display: flex;
-    li {
-      width: 33.333333%;
-      text-align: center;
-      padding: 16px;
-    }
-  }
-`;
 
 const Tags = () => {
   return (
@@ -65,19 +54,7 @@ const App = () => {
             <Route path="*" component={NoMatch}/>
           </Switch>
         </Main>
-        <Nav>
-          <ul>
-            <li>
-              <Link to="/tags">标签页</Link>
-            </li>
-            <li>
-              <Link to="/money">记账页</Link>
-            </li>
-            <li>
-              <Link to="/statistics">统计页</Link>
-            </li>
-          </ul>
-        </Nav>
+        <Nav />
       </Wrapper>
     </Router>
   );
