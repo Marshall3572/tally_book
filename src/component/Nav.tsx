@@ -22,6 +22,7 @@ export default () => {
     <Nav>
       <ul>
         <li>
+          <img />
           <Link to="/tags">标签页</Link>
         </li>
         <li>
