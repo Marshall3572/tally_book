@@ -101,7 +101,9 @@
   "devDependencies": {
     "@types/react-router-dom": "^5.1.8",
     "@types/styled-components": "^5.1.11",
-    "node-sass": "npm:dart-sass@1.25.0"
+    "node-sass": "npm:dart-sass@1.25.0",
+    "svg-sprite-loader": "^6.0.9",
+    "svgo-loader": "^3.0.0"
   },
   "jest": {
     "roots": [
