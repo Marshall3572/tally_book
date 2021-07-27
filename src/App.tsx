@@ -1,7 +1,7 @@
 import React from 'react';
-import {HashRouter as Router, Link, Switch, Route, Redirect} from 'react-router-dom';
+import {HashRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import styled from 'styled-components';
-import Nav from './component/Nav'
+import Nav from './component/Nav';
 
 const Wrapper = styled.div`
   //border: 1px solid red;
@@ -54,7 +54,7 @@ const App = () => {
             <Route path="*" component={NoMatch}/>
           </Switch>
         </Main>
-        <Nav />
+        <Nav/>
       </Wrapper>
     </Router>
   );

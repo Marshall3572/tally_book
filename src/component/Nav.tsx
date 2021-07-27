@@ -1,9 +1,8 @@
 import {Link} from 'react-router-dom';
 import React from 'react';
 import styled from 'styled-components';
-require('../icons/money.svg');  // svgo-loader => svg-sprite-loader这个loader会把我们引入的svg标签在body里作为一个symbol，合并成一个大的svg
-require('../icons/tag.svg');
-require('../icons/chart.svg');
+import Icon from './Icon';
+
 
 const Nav = styled.nav`
   line-height: 24px;
@@ -28,30 +27,24 @@ const Nav = styled.nav`
   }
 `;
 
-export default () => {
+ const NavWrapper = () => {
   return (
     <Nav>
       <ul>
         <li>
-          <svg className="icon">
-            {/* 可以在控制台打出，看得到id*/}
-            <use xlinkHref="#tag"/>
-          </svg>
+          <Icon name="tag" />
           <Link to="/tags">标签页</Link>
         </li>
         <li>
-          <svg className="icon">
-            <use xlinkHref="#money"/>
-          </svg>
+          <Icon name="money" />
           <Link to="/money">记账页</Link>
         </li>
         <li>
-          <svg className="icon">
-            <use xlinkHref="#chart"/>
-          </svg>
+          <Icon name="chart" />
           <Link to="/statistics">统计页</Link>
         </li>
       </ul>
     </Nav>
   );
 }
+export default NavWrapper
