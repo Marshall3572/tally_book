@@ -3,11 +3,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Icon from './Icon';
 
-// require('../icons/money.svg');  // svgo-loader => svg-sprite-loader这个loader会把我们引入的svg标签在body里作为一个symbol，合并成一个大的svg
-// require('../icons/tag.svg');
-// require('../icons/chart.svg');
-
-
 const Nav = styled.nav`
   line-height: 24px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
