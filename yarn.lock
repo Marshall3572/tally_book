@@ -1981,6 +1981,11 @@
   dependencies:
     source-map "^0.6.1"
 
+"@types/webpack-env@^1.16.2":
+  version "1.16.2"
+  resolved "http://r.npm.sankuai.com/@types/webpack-env/download/@types/webpack-env-1.16.2.tgz#8db514b059c1b2ae14ce9d7bb325296de6a9a0fa"
+  integrity sha1-jbUUsFnBsq4Uzp17syUpbeapoPo=
+
 "@types/webpack-sources@*":
   version "2.1.1"
   resolved "http://r.npm.sankuai.com/@types/webpack-sources/download/@types/webpack-sources-2.1.1.tgz#6af17e3a3ded71eec2b98008d7c12f498a0a4506"
