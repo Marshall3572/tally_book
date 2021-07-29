@@ -44,3 +44,8 @@ button{
   height: 1em;
   width: 1em;
 }
+.clearfix::after{
+  content: '';
+  display: block;
+  clear: both;
+}
