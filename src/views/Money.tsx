@@ -3,19 +3,37 @@ import React from 'react';
 import styled from 'styled-components';
 
 const TagsSection = styled.section`
+  background: #FFFFFF;
+  padding: 12px 16px;
 
-`
+  > ol {
+    margin: 0 -12px;
 
+    > li {
+      background: #D9D9D9;
+      border-radius: 18px;
+      display: inline-block;
+      padding: 3px 18px;
+      font-size: 14px;
+      margin: 8px 12px;
+    }
+  }
+
+  > button {
+    background: none;
+    border: none;
+    padding: 2px 4px;
+    border-bottom: 1px solid #333;
+    color: #666;
+    margin-top: 8px;
+  }
+`;
 const NotesSection = styled.section`
-
-`
+`;
 const CategorySection = styled.section`
-
-`
-
-const PadSection = styled.section`
-
-`
+`;
+const NumberPadSection = styled.section`
+`;
 
 
 const Money = () => {
@@ -42,8 +60,10 @@ const Money = () => {
           <li>收入</li>
         </ul>
       </CategorySection>
-      <PadSection>
-        <div>数值</div>
+      <NumberPadSection>
+        <div>
+          100
+        </div>
         <div>
           <button>1</button>
           <button>2</button>
@@ -60,9 +80,9 @@ const Money = () => {
           <button>0</button>
           <button>.</button>
         </div>
-      </PadSection>
+      </NumberPadSection>
     </Layout>
   );
 };
 
-export default Money
+export default Money;
