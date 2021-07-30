@@ -5,6 +5,11 @@ import styled from 'styled-components';
 const TagsSection = styled.section`
   background: #FFFFFF;
   padding: 12px 16px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
 
   > ol {
     margin: 0 -12px;
@@ -99,49 +104,61 @@ const NumberPadSection = styled.section`
       width: 25%;
       height: 64px;
       border: none;
-      &.ok{
+
+      &.ok {
         height: 128px;
         float: right;
       }
-      &.zero{
+
+      &.zero {
         width: 50%;
       }
-      &:nth-child(1){
+
+      &:nth-child(1) {
         background: #f2f2f2;
       }
+
       &:nth-child(2),
-      &:nth-child(5){
+      &:nth-child(5) {
         background: #E0E0E0;
       }
+
       &:nth-child(3),
       &:nth-child(6),
-      &:nth-child(9){
+      &:nth-child(9) {
         background: #D3D3D3;
       }
+
       &:nth-child(4),
       &:nth-child(7),
-      &:nth-child(10){
+      &:nth-child(10) {
         background: #C1C1C1;
       }
+
       &:nth-child(8),
       &:nth-child(11),
-      &:nth-child(13){
+      &:nth-child(13) {
         background: #B8B8B8;
       }
-      &:nth-child(12){
+
+      &:nth-child(12) {
         background: #9A9A9A;
       }
-      &:nth-child(14){
+
+      &:nth-child(14) {
         background: #A9A9A9;
       }
     }
   }
 `;
-
+const MyLayout = styled(Layout)`
+  display: flex;
+  flex-direction: column;
+`;
 
 const Money = () => {
   return (
-    <Layout>
+    <MyLayout>
       <TagsSection>
         <ol>
           <li>衣</li>
@@ -184,7 +201,7 @@ const Money = () => {
           <button className="dot">.</button>
         </div>
       </NumberPadSection>
-    </Layout>
+    </MyLayout>
   );
 };
 
