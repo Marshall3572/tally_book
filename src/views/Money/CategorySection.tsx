@@ -29,12 +29,22 @@ const Wrapper = styled.section`
   }
 `;
 const CategorySection: FC = () => {
+  const categoryMap = {
+    '-': '支出',
+    '+': '收入'
+  }
+  type Keys = keyof typeof categoryMap
+
+  const [categoryList] = useState<Keys[]>(['-', '+']);
   const [category, setCategory] = useState('-'); // '-'表示支出，'+'表示收入
   return (
     <Wrapper>
       <ul>
-        <li className={category === '-' ? 'selected' : ''} onClick={() => {setCategory('-');}}>支出</li>
-        <li className={category === '+' ? 'selected' : ''} onClick={() => {setCategory('+');}}>收入</li>
+        {categoryList.map(c => {
+          return (
+            <li className={category === c ? 'selected' : ''} onClick={() => {setCategory(c);}}>{categoryMap[c]}</li>
+          )
+        })}
       </ul>
     </Wrapper>
   );
