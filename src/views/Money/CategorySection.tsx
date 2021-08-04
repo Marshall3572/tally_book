@@ -42,7 +42,7 @@ const CategorySection: FC = () => {
       <ul>
         {categoryList.map(c => {
           return (
-            <li className={category === c ? 'selected' : ''} onClick={() => {setCategory(c);}}>{categoryMap[c]}</li>
+            <li key={c} className={category === c ? 'selected' : ''} onClick={() => {setCategory(c);}}>{categoryMap[c]}</li>
           )
         })}
       </ul>
