@@ -20,7 +20,8 @@ const Wrapper = styled.section`
       padding: 3px 18px;
       font-size: 14px;
       margin: 8px 12px;
-      &.selected{
+
+      &.selected {
         background: red;
       }
     }
@@ -36,9 +37,15 @@ const Wrapper = styled.section`
   }
 `;
 
-const TagsSection: React.FC = (props) => {
+type Props = {
+  value: string[],
+  onChange: (value: string[]) => void
+}
+
+const TagsSection: React.FC<Props> = (props) => {
   const [tags, setTags] = useState<string[]>(['衣', '食', '住', '行']);
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const selectedTags = props.value;
+  //因为React不允许修改props，所以我们在这里不能引入外部的setSelected
   const onAddTag = () => {
     const tagName = window.prompt('请输入新标签名称');
     if (tagName) {
@@ -47,15 +54,15 @@ const TagsSection: React.FC = (props) => {
     }
   };
   const onToggleTag = (tag: string) => {
-    const index = selectedTags.indexOf(tag)
-    if(index >= 0){
+    const index = selectedTags.indexOf(tag);
+    if (index >= 0) {
       // 如果tag已被选中，则复制其他被选中的tag，成为新的selectedTags，删除当前tag
-      setSelectedTags(selectedTags.filter(t => t !== tag))
-    }else{
-      setSelectedTags([...selectedTags, tag])
+      props.onChange(selectedTags.filter(t => t !== tag));
+    } else {
+      props.onChange([...selectedTags, tag]);
     }
   };
-  const x = (tag: string) => selectedTags.indexOf(tag) >= 0 ? 'selected' : ''
+  const x = (tag: string) => selectedTags.indexOf(tag) >= 0 ? 'selected' : '';
   return (
     <Wrapper>
       <ol>

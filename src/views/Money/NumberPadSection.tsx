@@ -2,18 +2,27 @@ import React, {FC, useState, MouseEvent} from 'react';
 import {Wrapper} from './NumberPadSection/Wrapper';
 import {generateOutput} from './NumberPadSection/generateOutput';
 
-const NumberPadSection: FC = () => {
-  const [output, _setOutput] = useState<string>('0');
+type Props = {
+  value: number,
+  onChange: (value: number) => void,
+  // 加?表示可选传
+  onOk?: () => void
+}
+const NumberPadSection: FC<Props> = (props) => {
+  const output = props.value.toString()
   const setOutput = (output: string) => {
-    if (output.length > 16) output = output.slice(0, 16);
-    else if (output.length === 0) output = '0'
-    _setOutput(output)
+    let value
+    if (output.length > 16) value = parseFloat(output.slice(0, 16));
+    else if (output.length === 0) value = 0
+    else value = parseFloat(output)
+    props.onChange(value)
   };
   const onClickButtonWrapper = (e: MouseEvent) => {
     const text = (e.target as HTMLButtonElement).textContent;
     if (!text) return;
     if (text === 'OK') {
-      // TODO
+      // 这里要判断onOk方法是否传了
+      if(props.onOk)props.onOk()
       return;
     }
     if('0123456789.'.split('').concat(['删除','清空']).indexOf(text) >= 0)
