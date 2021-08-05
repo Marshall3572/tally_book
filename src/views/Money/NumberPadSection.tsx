@@ -1,4 +1,4 @@
-import React, {FC, useState, MouseEvent} from 'react';
+import React, {FC, MouseEvent} from 'react';
 import {Wrapper} from './NumberPadSection/Wrapper';
 import {generateOutput} from './NumberPadSection/generateOutput';
 
@@ -22,11 +22,12 @@ const NumberPadSection: FC<Props> = (props) => {
     if (!text) return;
     if (text === 'OK') {
       // 这里要判断onOk方法是否传了
-      if(props.onOk)props.onOk()
+      if(props.onOk) props.onOk()
       return;
     }
-    if('0123456789.'.split('').concat(['删除','清空']).indexOf(text) >= 0)
+    if('0123456789'.split('').concat(['删除','清空','.']).indexOf(text) >= 0)
     setOutput(generateOutput(text, output))
+
   };
   return (
     <Wrapper>

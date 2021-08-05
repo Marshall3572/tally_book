@@ -1,4 +1,4 @@
-import Layout from '../component/layout';
+import Layout from '../components/Layout';
 import React from 'react';
 
 const Statistics = () => {

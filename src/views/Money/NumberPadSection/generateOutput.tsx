@@ -19,7 +19,7 @@ const generateOutput = (text: string, output: string) => {
       }
     case '.':
       if (output.indexOf('.') >= 0) return output;
-      return output + '.';
+      else return output + '.';
     case '删除':
       if (output.length === 1) {return '';} else {
         return output.slice(0, -1) || '';

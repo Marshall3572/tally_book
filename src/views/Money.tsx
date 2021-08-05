@@ -1,4 +1,4 @@
-import Layout from '../component/layout';
+import Layout from '../components/Layout';
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import {TagsSection} from './Money/TagSection';
