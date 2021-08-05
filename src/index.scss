@@ -34,18 +34,30 @@ body {
   line-height: 1.2;
   background: #f5f5f5;
 }
-button{
+
+button {
   font-family: inherit;
 }
-:focus{
+
+:focus {
   outline: none;
 }
+
 .icon {
   height: 1em;
   width: 1em;
 }
-.clearfix::after{
+
+.clearfix::after {
   content: '';
   display: block;
   clear: both;
+}
+
+//文字超过一行做打点处理
+
+.oneLine {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

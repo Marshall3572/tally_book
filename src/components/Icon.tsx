@@ -3,6 +3,8 @@ import React from 'react';
 require('../icons/money.svg');  // svgo-loader => svg-sprite-loader这个loader会把我们引入的svg标签在body里作为一个symbol，合并成一个大的svg
 require('../icons/tag.svg');
 require('../icons/chart.svg');
+require('../icons/left.svg');
+require('../icons/right.svg');
 
 // 难到我们每次添加一个svg都要require一下吗，那这样也太不优雅了，于是⬇我们可以直接引入一个目录
 // let importAll = (requireContext: __WebpackModuleApi.RequireContext) => requireContext.keys().forEach(requireContext);
