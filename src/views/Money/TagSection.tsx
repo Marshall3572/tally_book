@@ -39,40 +39,40 @@ const Wrapper = styled.section`
 `;
 
 type Props = {
-  value: string[],
-  onChange: (value: string[]) => void
+  value: number[],
+  onChange: (value: number[]) => void
 }
 
 const TagsSection: React.FC<Props> = (props) => {
   const {tags, setTags} = useTags();
-  const selectedTags = props.value;
+  const selectedTagIds = props.value;
   //因为React不允许修改props，所以我们在这里不能引入外部的setSelected
   const onAddTag = () => {
     const tagName = window.prompt('请输入新标签名称');
     if (tagName) {
       // 这里可做一个数组去重，但要提示重复标签
-      setTags([...tags, tagName]);
+      setTags([...tags, {id: Math.random(), name: tagName}]);
     }
   };
-  const onToggleTag = (tag: string) => {
-    const index = selectedTags.indexOf(tag);
+  const onToggleTag = (tagId: number) => {
+    const index = selectedTagIds.indexOf(tagId);
     if (index >= 0) {
       // 如果tag已被选中，则复制其他被选中的tag，成为新的selectedTags，删除当前tag
-      props.onChange(selectedTags.filter(t => t !== tag));
+      props.onChange(selectedTagIds.filter(t => t !== tagId));
     } else {
-      props.onChange([...selectedTags, tag]);
+      props.onChange([...selectedTagIds, tagId]);
     }
   };
-  const x = (tag: string) => selectedTags.indexOf(tag) >= 0 ? 'selected' : '';
+  const getClass = (tagId: number) => selectedTagIds.indexOf(tagId) >= 0 ? 'selected' : '';
   return (
     <Wrapper>
       <ol>
         {tags.map(tag =>
-          <li key={tag} onClick={
+          <li key={tag.id} onClick={
             // 这里箭头函数是因为要这个函数
-            () => {onToggleTag(tag);}
+            () => {onToggleTag(tag.id);}
             // 这里非箭头函数是因为要返回的东西
-          } className={x(tag)}>{tag}</li>
+          } className={getClass(tag.id)}>{tag.name}</li>
         )}
       </ol>
       {/*如果不把onClick里的函数写成箭头函数，那么意思就是把这个函数执行完了返回的新函数传给onClick*/}
