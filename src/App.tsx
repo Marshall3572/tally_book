@@ -17,7 +17,7 @@ const App = () => {
       <Router>
         <Switch>
           <Route exact path="/tags" component={Tags}/>
-          <Route exact path="/tags/:tag" component={Tag}/>
+          <Route exact path="/tags/:id" component={Tag}/>
           <Route exact path="/money" component={Money}/>
           <Route exact path="/statistics" component={Statistics}/>
           {/*修改默认路由*/}
