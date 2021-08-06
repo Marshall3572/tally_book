@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import React, {useState} from 'react';
 import {useTags} from '../../useTags';
+import {createId} from '../../lib/createId';
 
 const Wrapper = styled.section`
   background: #FFFFFF;
@@ -51,7 +52,7 @@ const TagsSection: React.FC<Props> = (props) => {
     const tagName = window.prompt('请输入新标签名称');
     if (tagName) {
       // 这里可做一个数组去重，但要提示重复标签
-      setTags([...tags, {id: Math.random(), name: tagName}]);
+      setTags([...tags, {id: createId(), name: tagName}]);
     }
   };
   const onToggleTag = (tagId: number) => {
