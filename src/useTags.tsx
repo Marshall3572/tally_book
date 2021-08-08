@@ -11,7 +11,8 @@ const defaultTags = [
 // use开头的就是自定义的hooks，这个操作是封装一个自定义的Hook
 const useTags = () => {
     const [tags, setTags] = useState<{ id: number, name: string }[]>(defaultTags);
-    return {tags, setTags};
+    const findTag = (id: number) => tags.filter(tag => tag.id === id)[0]
+    return {tags, setTags, findTag};
   }
 ;
 
