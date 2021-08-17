@@ -6,25 +6,31 @@ import Icon from './Icon';
 const NavWrapper = styled.nav`
   background: white;
   line-height: 24px;
-  box-shadow: 0 0 3px rgba(0,0,0,0.25);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+
   > ul {
-    display:flex;
-    > li{
+    display: flex;
+
+    > li {
       width: 33.3333%;
-      text-align:center;
+      text-align: center;
+
       > a {
         display: flex;
         flex-direction: column;
         padding: 4px 0;
         justify-content: center;
         align-items: center;
+
         .icon {
           width: 24px;
           height: 24px;
         }
-        &.selected{
+
+        &.selected {
           color: #fbbc05;
-          .icon{
+
+          .icon {
             fill: #fbbc05;
           }
         }

@@ -11,14 +11,14 @@ require('../icons/right.svg');
 // try {importAll(require.context('icons', true, /\.svg$/));} catch (error) {console.log(error);}
 
 type Props = {
-  name: string
+  name?: string
 }
 
 const Icon = (props: Props) => {
   return (
 // 可以在控制台打出，看得到id
     <svg className="icon">
-      <use xlinkHref={'#' + props.name}/>
+      {props.name && <use xlinkHref={'#' + props.name}/>}
     </svg>
   )
 };

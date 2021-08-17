@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-`;
+ `;
 const Main = styled.div`
   //border: 1px solid green;
   //这样就可以把导航栏压到屏幕底部

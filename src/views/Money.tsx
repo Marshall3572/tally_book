@@ -25,7 +25,7 @@ const Money = () => {
   };
   return (
     <MyLayout>
-      {selected.note}
+      {/*{selected.note}*/}
       <TagsSection value={selected.tagIds} onChange={tagIds => onChange({tagIds: tagIds})}/>
       <NoteSection value={selected.note} onChange={note => onChange({note: note})}/>
       <CategorySection value={selected.category} onChange={category => onChange({category: category})}/>

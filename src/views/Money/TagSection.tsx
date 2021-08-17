@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React, {useState} from 'react';
+import React from 'react';
 import {useTags} from '../../useTags';
 import {createId} from '../../lib/createId';
 
