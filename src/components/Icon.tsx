@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {SVGAttributes} from 'react';
+import cs from 'classnames';
 
 require('../icons/money.svg');  // svgo-loader => svg-sprite-loader这个loader会把我们引入的svg标签在body里作为一个symbol，合并成一个大的svg
 require('../icons/tag.svg');
@@ -12,12 +13,13 @@ require('../icons/right.svg');
 
 type Props = {
   name?: string
-}
+} & SVGAttributes<SVGElement>
 
 const Icon = (props: Props) => {
+  const {name, children, className, ...rest} = props
   return (
 // 可以在控制台打出，看得到id
-    <svg className="icon">
+    <svg className={cs("icon",className)} {...rest}>
       {props.name && <use xlinkHref={'#' + props.name}/>}
     </svg>
   )
