@@ -22,15 +22,13 @@ const useTags = () => {
       }
       return res;
     };
-    const updateTag = (id: number, obj: { name: string }) => {
-      const index = findTagIndex(id);
-      // 深拷贝tags
-      const tagsClone = JSON.parse(JSON.stringify(tags));
-      // splice在原数组上修改，返回被删掉的值
-      tagsClone.splice(index, 1, {id: id, name: obj.name});
-      setTags(tagsClone);
+    const updateTag = (id: number, {name}: { name: string }) => {
+      setTags(tags.map(tag => tag.id === id ? {id, name: name} : tag))
     };
-    return {tags, setTags, findTag, updateTag, findTagIndex};
+    const deleteTag = (id: number) => {
+      setTags(tags.filter(tag => tag.id !== id))
+    };
+    return {tags, setTags, findTag, updateTag, findTagIndex, deleteTag};
   }
 ;
 
