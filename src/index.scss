@@ -35,8 +35,8 @@ body {
   background: #f5f5f5;
 }
 
-button {
-  font-family: inherit;
+button, input {
+  font: inherit;
 }
 
 :focus {
