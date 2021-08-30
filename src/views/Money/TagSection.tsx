@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
 import {useTags} from '../../useTags';
-import {createId} from '../../lib/createId';
 
 const Wrapper = styled.section`
   background: #FFFFFF;
@@ -45,16 +44,10 @@ type Props = {
 }
 
 const TagsSection: React.FC<Props> = (props) => {
-  const {tags, setTags} = useTags();
+  const {tags, addTag} = useTags();
   const selectedTagIds = props.value;
   //因为React不允许修改props，所以我们在这里不能引入外部的setSelected
-  const onAddTag = () => {
-    const tagName = window.prompt('请输入新标签名称');
-    if (tagName) {
-      // 这里可做一个数组去重，但要提示重复标签
-      setTags([...tags, {id: createId(), name: tagName}]);
-    }
-  };
+
   const onToggleTag = (tagId: number) => {
     const index = selectedTagIds.indexOf(tagId);
     if (index >= 0) {
@@ -77,7 +70,7 @@ const TagsSection: React.FC<Props> = (props) => {
         )}
       </ol>
       {/*如果不把onClick里的函数写成箭头函数，那么意思就是把这个函数执行完了返回的新函数传给onClick*/}
-      <button onClick={onAddTag}>新增标签</button>
+      <button>新增标签</button>
     </Wrapper>
   );
 };
