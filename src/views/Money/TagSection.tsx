@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import {useTags} from '../../useTags';
+import {useTags} from '../../components/hooks/useTags';
 
 const Wrapper = styled.section`
   background: #FFFFFF;
@@ -23,7 +23,7 @@ const Wrapper = styled.section`
       margin: 8px 12px;
 
       &.selected {
-        background: red;
+        background: #fbbc05;
       }
     }
   }

@@ -1,6 +1,6 @@
 import {useEffect, useRef, useState} from 'react';
-import {createId} from './lib/createId';
-import {useUpdate} from './components/hooks/useUpdate';
+import {createId} from '../../lib/createId';
+import {useUpdate} from './useUpdate';
 
 // use开头的就是自定义的hooks，这个操作是封装一个自定义的Hook
 const useTags = () => {
