@@ -70,7 +70,7 @@ const TagsSection: React.FC<Props> = (props) => {
         )}
       </ol>
       {/*如果不把onClick里的函数写成箭头函数，那么意思就是把这个函数执行完了返回的新函数传给onClick*/}
-      <button>新增标签</button>
+      <button onClick={addTag}>新增标签</button>
     </Wrapper>
   );
 };
