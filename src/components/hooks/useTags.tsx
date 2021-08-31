@@ -7,15 +7,15 @@ const useTags = () => {
     const [tags, setTags] = useState<{ id: number, name: string }[]>([]);
     useEffect(() => {
       let localTags = JSON.parse(window.localStorage.getItem('tags') || '[]');
-      if(localTags.length === 0){
+      if (localTags.length === 0) {
         localTags = [
           {id: createId(), name: '衣'},
           {id: createId(), name: '食'},
           {id: createId(), name: '住'},
           {id: createId(), name: '行'},
-        ]
+        ];
       }
-      setTags(localTags)
+      setTags(localTags);
     }, []);
     useUpdate(() => {
       window.localStorage.setItem('tags', JSON.stringify(tags));
@@ -44,7 +44,11 @@ const useTags = () => {
         setTags([...tags, {id: createId(), name: tagName}]);
       }
     };
-    return {tags, setTags, findTag, updateTag, findTagIndex, deleteTag, addTag};
+    const getName = (id: number) => {
+      const tag = tags.filter(t => t.id === id)[0];
+      return tag ? tag.name : '';
+    };
+    return {tags, setTags, findTag, updateTag, findTagIndex, deleteTag, addTag, getName};
   }
 ;
 
