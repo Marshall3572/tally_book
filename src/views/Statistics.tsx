@@ -37,7 +37,7 @@ const Statistics = () => {
   const hash: { [K: string]: RecordItem[] } = {};
   const selectedRecords = records.filter(record => record.category === category);
 
-  selectedRecords.map(record => {
+  selectedRecords.forEach(record => {
     const key = dayjs(record.createdAt).format('YYYY年MM月DD日');
     const value = record;
     if (!(key in hash)) {
