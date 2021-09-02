@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.087c16bf.chunk.css",
-    "main.js": "/static/js/main.eccba1f4.chunk.js",
-    "main.js.map": "/static/js/main.eccba1f4.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.651a1f2e.js",
-    "runtime-main.js.map": "/static/js/runtime-main.651a1f2e.js.map",
-    "static/js/2.54201b77.chunk.js": "/static/js/2.54201b77.chunk.js",
-    "static/js/2.54201b77.chunk.js.map": "/static/js/2.54201b77.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.087c16bf.chunk.css.map": "/static/css/main.087c16bf.chunk.css.map",
-    "static/js/2.54201b77.chunk.js.LICENSE.txt": "/static/js/2.54201b77.chunk.js.LICENSE.txt"
+    "main.css": "/tally_book/build/static/css/main.087c16bf.chunk.css",
+    "main.js": "/tally_book/build/static/js/main.eccba1f4.chunk.js",
+    "main.js.map": "/tally_book/build/static/js/main.eccba1f4.chunk.js.map",
+    "runtime-main.js": "/tally_book/build/static/js/runtime-main.b4ba1811.js",
+    "runtime-main.js.map": "/tally_book/build/static/js/runtime-main.b4ba1811.js.map",
+    "static/js/2.e3c22828.chunk.js": "/tally_book/build/static/js/2.e3c22828.chunk.js",
+    "static/js/2.e3c22828.chunk.js.map": "/tally_book/build/static/js/2.e3c22828.chunk.js.map",
+    "index.html": "/tally_book/build/index.html",
+    "static/css/main.087c16bf.chunk.css.map": "/tally_book/build/static/css/main.087c16bf.chunk.css.map",
+    "static/js/2.e3c22828.chunk.js.LICENSE.txt": "/tally_book/build/static/js/2.e3c22828.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.651a1f2e.js",
-    "static/js/2.54201b77.chunk.js",
+    "static/js/runtime-main.b4ba1811.js",
+    "static/js/2.e3c22828.chunk.js",
     "static/css/main.087c16bf.chunk.css",
     "static/js/main.eccba1f4.chunk.js"
   ]

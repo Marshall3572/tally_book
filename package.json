@@ -1,6 +1,7 @@
 {
   "name": "tally",
   "version": "0.1.0",
+  "homepage": "https://marshall3572.github.io/tally_book/build/",
   "private": true,
   "dependencies": {
     "@babel/core": "7.12.3",
