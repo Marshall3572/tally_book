@@ -35,7 +35,7 @@ const Money = () => {
     }
   };
   return (
-    <MyLayout>
+    <MyLayout scrollTop={9999}>
       <TagsSection value={selected.tagIds} onChange={tagIds => onChange({tagIds: tagIds})}/>
       <NoteSection value={selected.note} onChange={note => onChange({note: note})}/>
       <CategoryWrapper>
