@@ -1,2 +1,2 @@
 ## 支持扫码预览
-![tolly_book](https://user-images.githubusercontent.com/47000471/134306416-8e298998-d1c5-40c4-aa93-248bb0de917b.png)
+![55__f5422e61152cb220b3112dac184a4638_d44754ae1c71fb441b200c1aecbbea49](https://user-images.githubusercontent.com/47000471/134306809-3d857982-efb7-4bd2-a06f-5943b7b1c10c.png)
